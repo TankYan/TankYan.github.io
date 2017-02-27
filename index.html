@@ -133,6 +133,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-漏洞类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html><html><head><title>漏洞类型</title><meta charset="utf-8"><link href="https://dn-maxiang.qbox.me/res-min/themes/marxico.css" rel="stylesheet"><style>
+
+.note-content  {font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, Song, sans-serif;}
+</style></head><body><div id="preview-contents" class="note-content">
+                        
+                    
+
+<p>安全问题不论在哪都是备受关注的，防火墙可以抵挡一部分ddos攻击，而在开发过程中涉及安全问题的东西往往比能否实现功能更重要。</p>
+
+<h2 id="漏洞类型">漏洞类型</h2>
+
+<h3 id="设计漏洞">设计漏洞</h3>
+
+<p>一般通过评审来避免这种漏洞，这些都是在开会时进行评估的，主要遵守三个原则：</p>
+
+<ol><li rel="1">关键操作必须在后台控制</li>
+<li rel="2">关键信息不允许明文显示（掩码 181<strong><em>*3872，531*</em></strong>53@**.com）</li>
+<li rel="3">不返回，不提交不必要的信息</li>
+</ol>
+
+<h3 id="输入漏洞">输入漏洞</h3>
+
+<p>最实际的例子是网银中密码输入框，必须安装插件才能输入，这是为了避免键盘监听，获取输入的信息，安装插件和使用软键盘可以避免这类漏洞（这类控件一般为ActiveX，是用c，c++来实现的）。</p>
+
+
+
+<h3 id="网络漏洞">网络漏洞</h3>
+
+<p>这是在数据传输过程中会发生的（使用抓包工具（fiddler）拦截数据），常常使用加密方式来避免。</p>
+
+<h4 id="对称加密rsa">对称加密（RSA）：</h4>
+
+<p>这是通过公私钥来实现前端加密和后台解密的，而密钥在每次请求时都会改变。</p>
+
+
+
+<h3 id="储存漏洞">储存漏洞</h3>
+
+<p>在数据库中发生的，当数据库被别人获取，如果都是明文展示的话很容易被人利用，</p>
+
+<h4 id="非对称加密不可逆加密md5">非对称加密（不可逆加密，MD5）：</h4>
+
+<p>只能加密，不能再解密，通过一种复杂的运算方法得到一串32位或64位无规则字符（其实有算法那就一定有规则咯。。）存储在数据库，只要相同的字符加密后的MD5值也就相同，在储存密码时使用MD5值，即使得到数据库中的那串MD5值也很难推算出密码，MD5也用在校验数据完整性中，可以避免病毒植入到文件中，而毫无察觉。</p>
+
+<p>常见的容易发生安全事故的地方就这几个了（怎么感觉像是建筑行业的事故，看来大学学到的就这个了。。），不过这也不比建筑业出现的事故小，只要发生了事故，损失的也不比其他事故小。</p></div></body></html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/27/漏洞类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
