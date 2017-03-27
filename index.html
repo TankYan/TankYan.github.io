@@ -133,19 +133,82 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ajax请求及跨域问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/10/ajax请求及跨域问题/">Hello World</a>
+      <a class="article-title" href="/2017/03/27/post/">html数据储存</a>
     </h1>
   
 
         
-        <a href="/2017/03/10/ajax请求及跨域问题/" class="archive-article-date">
+        <a href="/2017/03/27/post/" class="archive-article-date">
+  	<time datetime="2017-03-27T12:32:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>突然想起老师以前提过做一个记录轨迹的本地应用，当时还不了解怎么储存数据，只能零时记录下一个值存储在一个数组里面，刷新后就消失了，只有一直开着才能实现完整的功能。<br>这几天在看w3school的时候看到关于web存储的那一片，终于可以把这个问题解决了。<br>在<a href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" target="_blank" rel="external">w3school</a>中提到两种客户端存储数据的方法：localStorage和sessionStorage。<br>两种方法存在一些区别：localStorage是不受时间限制的数据存储，即使刷新或者重启浏览器都不会删除，而sessionStorage刷新后就会消失，在chrome浏览器中，我们可以进入开发者模式，打开Application,在storage列表中看到Local Storage和Session Storage我们可以查看浏览器保存下来的Local Storage。<br>使用localStorage可以在不影响网站性能前提下存储大量数据，<br>需要注意的是，每个网站只能访问自己的那个数据（其实这也是毋庸置疑的，可以互相访问岂不是非常危险）<br>其实以上两个存储对象过去的实现都是通过cookie实现但是cookie并不适合大量数据的存储，所以出现的storage可以解决这个问题。</p>
+<p>关于存储的问题，还有浏览器Cookie和Cache这两个形式，<br>Cookie用在与服务器的请求中，不论是否需要都会携带，常常用在密码和验证上，在登录过后，跳转到下一个页面继续保持登录状态就需要用到Cookie了。<br>Cache呢，缓存是保存一些从服务器接受的数据和session很像，但是当超过一定额度时会自动清除，这些没被清除的内容，即使离线状态也可以访问。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/27/post/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-ajax请求及跨域问题(一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/ajax请求及跨域问题(一）/">ajax请求及跨域问题（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/10/ajax请求及跨域问题(一）/" class="archive-article-date">
   	<time datetime="2017-03-10T04:13:28.567Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
 </a>
         
@@ -153,15 +216,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>浏览器的同源策略</p>
+<p>XHR对象只能访问与包含它的页面位于同一域中的资源，这种安全策略可以预防某些恶意行为</p>
+<p>——-《JavaScript高级程序设计》</p>
+<p>虽然同源策略保护了我们远离恶意行为，但是跨域访问资源又是必不可少的，所以产生了一些解决的方案，其原理大概就是从浏览器端或者服务器端来实现的。</p>
+<p>先说从浏览器端的解决方案：</p>
+<p>jsonp（动态设置script标签）</p>
+<p>在网上找到的一些资源里把这jsonp和动态设置script分开来，但我觉得两个原理是相同的。都是动态得添加一个script标签。</p>
+<p>jsonp与json没有什么必然的联系，一个是请求数据的方式，一个是一种数据格式。jsonp中的数据并不是简单的json，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">fn(&#123;    </div><div class="line">&quot;people&quot;:[&#123;</div><div class="line">    &quot;firstName&quot;: &quot;Brett&quot;,</div><div class="line">    &quot;lastName&quot;:&quot;McLaughlin&quot;,</div><div class="line">  &#125;,&#123;</div><div class="line">    &quot;firstName&quot;:&quot;Jason&quot;,</div><div class="line">    &quot;lastName&quot;:&quot;Hunter&quot;,</div><div class="line">    &#125;]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>原本的json文件被包含在一个函数内，我们就是要调用这个js文件，然后执行这个fn函数，而这个fn函数我们可以在调用中自己定义，怎么处理数据就是自己的事情了。<br>jQuery已经把jsonp写入到ajax方法中去了，在使用时我们就可以像使用普通的ajax请求一样拿到跨域数据。不必在意jQuery内部做了什么。</p>
 
       
 
@@ -174,7 +238,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/10/ajax请求及跨域问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/10/ajax请求及跨域问题(一）/">展开全文 >></a>
         </p>
       
 
@@ -195,88 +259,43 @@
     <article id="post-开发中注意的安全问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#开发中注意的安全问题</p>
-<p>安全问题不论在哪都是备受关注的，防火墙可以抵挡一部分ddos攻击，而在开发过程中涉及安全问题的东西往往比能否实现功能更重要。</p>
-<p>##漏洞类型</p>
-<p>###设计漏洞</p>
-<p>一般通过评审来避免这种漏洞，这些都是在开会时进行评估的，主要遵守三个原则：</p>
-<ol>
-<li>关键操作必须在后台控制</li>
-<li>关键信息不允许明文显示（掩码 ）</li>
-<li>不返回，不提交不必要的信息</li>
-</ol>
-<p>###输入漏洞</p>
-<p>最实际的例子是网银中密码输入框，必须安装插件才能输入，这是为了避免键盘监听，获取输入的信息，安装插件和使用软键盘可以避免这类漏洞（这类控件一般为ActiveX，是用c，c++来实现的）。</p>
-<p>###网络漏洞</p>
-<p>这是在数据传输过程中会发生的（使用抓包工具（fiddler）拦截数据），常常使用加密方式来避免。</p>
-<p>####对称加密（RSA）：<br>这是通过公私钥来实现前端加密和后台解密的，而密钥在每次请求时都会改变。</p>
-<p>###储存漏洞</p>
-<p>在数据库中发生的，当数据库被别人获取，如果都是明文展示的话很容易被人利用，</p>
-<p>####非对称加密（不可逆加密，MD5）：<br>只能加密，不能再解密，通过一种复杂的运算方法得到一串32位或64位无规则字符（其实有算法那就一定有规则咯。。）存储在数据库，只要相同的字符加密后的MD5值也就相同，在储存密码时使用MD5值，即使得到数据库中的那串MD5值也很难推算出密码，MD5也用在校验数据完整性中，可以避免病毒植入到文件中，而毫无察觉。</p>
-<p>常见的容易发生安全事故的地方就这几个了（怎么感觉像是建筑行业的事故，看来大学学到的就这个了。。），不过这也不比建筑业出现的事故小，只要发生了事故，损失的也不比其他事故小。</p>
-<p>也不比其他事故小。</p>
-<p>�</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/开发中注意的安全问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/02/27/开发中注意的安全问题/">开发中注意的安全问题</a>
     </h1>
   
 
         
-        <a href="/2017/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-25T08:19:50.033Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
+        <a href="/2017/02/27/开发中注意的安全问题/" class="archive-article-date">
+  	<time datetime="2017-02-27T07:24:01.276Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>开发中注意的安全问题</p>
+<p>安全问题不论在哪都是备受关注的，防火墙可以抵挡一部分ddos攻击，而在开发过程中涉及安全问题的东西往往比能否实现功能更重要。</p>
+<p>漏洞类型</p>
+<p>设计漏洞</p>
+<p>一般通过评审来避免这种漏洞，这些都是在开会时进行评估的，主要遵守三个原则：</p>
+<ol>
+<li>关键操作必须在后台控制</li>
+<li>关键信息不允许明文显示（掩码 ）</li>
+<li>不返回，不提交不必要的信息</li>
+</ol>
+<p>输入漏洞</p>
+<p>最实际的例子是网银中密码输入框，必须安装插件才能输入，这是为了避免键盘监听，获取输入的信息，安装插件和使用软键盘可以避免这类漏洞（这类控件一般为ActiveX，是用c，c++来实现的）。</p>
+<p>网络漏洞</p>
+<p>这是在数据传输过程中会发生的（使用抓包工具（fiddler）拦截数据），常常使用加密方式来避免。</p>
+<p>对称加密（RSA）：<br>这是通过公私钥来实现前端加密和后台解密的，而密钥在每次请求时都会改变。</p>
+<p>储存漏洞</p>
+<p>在数据库中发生的，当数据库被别人获取，如果都是明文展示的话很容易被人利用，</p>
+<p>非对称加密（不可逆加密，MD5）：<br>只能加密，不能再解密，通过一种复杂的运算方法得到一串32位或64位无规则字符（其实有算法那就一定有规则咯。。）存储在数据库，只要相同的字符加密后的MD5值也就相同，在储存密码时使用MD5值，即使得到数据库中的那串MD5值也很难推算出密码，MD5也用在校验数据完整性中，可以避免病毒植入到文件中，而毫无察觉。</p>
+<p>常见的容易发生安全事故的地方就这几个了（怎么感觉像是建筑行业的事故，看来大学学到的就这个了。。），不过这也不比建筑业出现的事故小，只要发生了事故，损失的也不比其他事故小。</p>
+<p>也不比其他事故小。</p>
 
       
 
@@ -285,11 +304,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/25/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/27/开发中注意的安全问题/">展开全文 >></a>
         </p>
       
 
@@ -386,6 +416,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

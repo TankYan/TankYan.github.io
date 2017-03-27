@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/2 | 大菠萝</title>
+  <title>html数据储存 | 大菠萝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="大菠萝">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+  <meta name="description" content="突然想起老师以前提过做一个记录轨迹的本地应用，当时还不了解怎么储存数据，只能零时记录下一个值存储在一个数组里面，刷新后就消失了，只有一直开着才能实现完整的功能。这几天在看w3school的时候看到关于web存储的那一片，终于可以把这个问题解决了。在w3school中提到两种客户端存储数据的方法：localStorage和sessionStorage。两种方法存在一些区别：localStorage是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html数据储存">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/post/index.html">
 <meta property="og:site_name" content="大菠萝">
+<meta property="og:description" content="突然想起老师以前提过做一个记录轨迹的本地应用，当时还不了解怎么储存数据，只能零时记录下一个值存储在一个数组里面，刷新后就消失了，只有一直开着才能实现完整的功能。这几天在看w3school的时候看到关于web存储的那一片，终于可以把这个问题解决了。在w3school中提到两种客户端存储数据的方法：localStorage和sessionStorage。两种方法存在一些区别：localStorage是">
+<meta property="og:updated_time" content="2017-03-27T13:52:34.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大菠萝">
+<meta name="twitter:title" content="html数据储存">
+<meta name="twitter:description" content="突然想起老师以前提过做一个记录轨迹的本地应用，当时还不了解怎么储存数据，只能零时记录下一个值存储在一个数组里面，刷新后就消失了，只有一直开着才能实现完整的功能。这几天在看w3school的时候看到关于web存储的那一片，终于可以把这个问题解决了。在w3school中提到两种客户端存储数据的方法：localStorage和sessionStorage。两种方法存在一些区别：localStorage是">
   
     <link rel="alternative" href="/atom.xml" title="大菠萝" type="application/atom+xml">
   
@@ -131,60 +135,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-post" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/27/开发中注意的安全问题/" class="archive-article-date">
-  	<time datetime="2017-02-27T07:24:01.276Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/27/开发中注意的安全问题/">开发中注意的安全问题</a>
+    <h1 class="article-title" itemprop="name">
+      html数据储存
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/27/post/" class="archive-article-date">
+  	<time datetime="2017-03-27T12:32:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>突然想起老师以前提过做一个记录轨迹的本地应用，当时还不了解怎么储存数据，只能零时记录下一个值存储在一个数组里面，刷新后就消失了，只有一直开着才能实现完整的功能。<br>这几天在看w3school的时候看到关于web存储的那一片，终于可以把这个问题解决了。<br>在<a href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" target="_blank" rel="external">w3school</a>中提到两种客户端存储数据的方法：localStorage和sessionStorage。<br>两种方法存在一些区别：localStorage是不受时间限制的数据存储，即使刷新或者重启浏览器都不会删除，而sessionStorage刷新后就会消失，在chrome浏览器中，我们可以进入开发者模式，打开Application,在storage列表中看到Local Storage和Session Storage我们可以查看浏览器保存下来的Local Storage。<br>使用localStorage可以在不影响网站性能前提下存储大量数据，<br>需要注意的是，每个网站只能访问自己的那个数据（其实这也是毋庸置疑的，可以互相访问岂不是非常危险）<br>其实以上两个存储对象过去的实现都是通过cookie实现但是cookie并不适合大量数据的存储，所以出现的storage可以解决这个问题。</p>
+<p>关于存储的问题，还有浏览器Cookie和Cache这两个形式，<br>Cookie用在与服务器的请求中，不论是否需要都会携带，常常用在密码和验证上，在登录过后，跳转到下一个页面继续保持登录状态就需要用到Cookie了。<br>Cache呢，缓存是保存一些从服务器接受的数据和session很像，但是当超过一定额度时会自动清除，这些没被清除的内容，即使离线状态也可以访问。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/27/post/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/03/10/ajax请求及跨域问题(一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax请求及跨域问题（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -207,8 +311,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
