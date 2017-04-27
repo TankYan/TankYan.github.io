@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 正则 | 大菠萝</title>
+  <title>最近碰到的一个关于jsonp问题（待解决) | 大菠萝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="大菠萝">
-<meta property="og:url" content="http://yoursite.com/tags/正则/index.html">
+  <meta name="description" content="这些天把freecodecamp上刷题，正好做到一个关于跨域的问题，原本以为跨域问题已经比较熟悉了，可是到了实际时还是出现了问题。题目Build a Random Quote Machine是这样的：这里我用的是这个apiforismatic按照文档中描述的，给url设置为123456789url : &amp;quot;http://api.forismatic.com/api/1.0/?method=">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近碰到的一个关于jsonp问题（待解决)">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/最近碰到的一个个问题/index.html">
 <meta property="og:site_name" content="大菠萝">
+<meta property="og:description" content="这些天把freecodecamp上刷题，正好做到一个关于跨域的问题，原本以为跨域问题已经比较熟悉了，可是到了实际时还是出现了问题。题目Build a Random Quote Machine是这样的：这里我用的是这个apiforismatic按照文档中描述的，给url设置为123456789url : &amp;quot;http://api.forismatic.com/api/1.0/?method=">
+<meta property="og:updated_time" content="2017-04-27T13:06:34.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大菠萝">
+<meta name="twitter:title" content="最近碰到的一个关于jsonp问题（待解决)">
+<meta name="twitter:description" content="这些天把freecodecamp上刷题，正好做到一个关于跨域的问题，原本以为跨域问题已经比较熟悉了，可是到了实际时还是出现了问题。题目Build a Random Quote Machine是这样的：这里我用的是这个apiforismatic按照文档中描述的，给url设置为123456789url : &amp;quot;http://api.forismatic.com/api/1.0/?method=">
   
     <link rel="alternative" href="/atom.xml" title="大菠萝" type="application/atom+xml">
   
@@ -131,60 +135,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-最近碰到的一个个问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/27/post-1/" class="archive-article-date">
-  	<time datetime="2017-03-27T14:20:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/27/post-1/">关于正则运算的一个注意事项</a>
+    <h1 class="article-title" itemprop="name">
+      最近碰到的一个关于jsonp问题（待解决)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/27/最近碰到的一个个问题/" class="archive-article-date">
+  	<time datetime="2017-04-27T12:14:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这些天把freecodecamp上刷题，正好做到一个关于跨域的问题，原本以为跨域问题已经比较熟悉了，可是到了实际时还是出现了问题。<br>题目<a href="&quot;https://freecodecamp.cn/challenges/build-a-random-quote-machine&quot;">Build a Random Quote Machine</a>是这样的：<br>这里我用的是这个api<a href="&quot;http://forismatic.com/en/api/&quot;">forismatic</a><br>按照文档中描述的，给url设置为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">url : &quot;http://api.forismatic.com/api/1.0/?method=getQuote&amp;key=457653&amp;format=jsonp&amp;lang=en&amp;jsonp=callback&quot;,</div><div class="line">dataType : &quot;jsonp&quot;,</div><div class="line">jsonpCallback : &apos;data&apos;,</div><div class="line">success : function(data)&#123;</div><div class="line">  console.log(data);</div><div class="line">&#125;,</div><div class="line">error : function(err)&#123;</div><div class="line">  console.log(err.status);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>结果无法请求到，返回的错误提示是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Refused to execute script from &apos;http://api.forismatic.com/api/1.0/?method=getQuote&amp;key=457653&amp;format=jsonp&amp;lang=en&amp;jsonp=callback&amp;callback=data&amp;_=1493296768500&apos; because its MIME type (&apos;application/json&apos;) is not executable, and strict MIME type checking is enabled.</div></pre></td></tr></table></figure></p>
+<p>状态码是404，但是在network中貌似请求到了状态码是200，这种MIME类型不被允许无法执行这个链接的脚本，在百度里也找了下这个，可是貌似都不是解决的办法</p>
+<p>所以改用了另外一个api<a href="&quot;https://quotesondesign.com/api-v4-0/&quot;">quotesondesign</a>,貌似更好用。</p>
+<p>如果你碰到过类似的问题，有较好的解决办法，希望能够交流。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">纠错本</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/27/最近碰到的一个个问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/04/12/outGFW/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">翻墙的捷径</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -207,9 +315,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
