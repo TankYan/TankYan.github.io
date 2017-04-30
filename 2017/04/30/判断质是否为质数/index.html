@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: gfw | 大菠萝</title>
+  <title>判断质是否为质数 | 大菠萝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="大菠萝">
-<meta property="og:url" content="http://yoursite.com/tags/gfw/index.html">
+  <meta name="description" content="质数（素数）是指只能被1和它本身整除的数，1不是质数；如何判断一个数是否为质数呢。首先我想到的是用循环，让它从2开始，直到本身，循环过程中，如果遇到余数为0，就跳出循环。很显然这样的方式很不可取，当这个数是一个比较大的质数时，就会慢慢的循环到本身，对计算机的能力是一个挑战，数字足够大的时候（不用多大）就会奔溃。所以此处如何优化算法，成为关键。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判断质是否为质数">
+<meta property="og:url" content="http://yoursite.com/2017/04/30/判断质是否为质数/index.html">
 <meta property="og:site_name" content="大菠萝">
+<meta property="og:description" content="质数（素数）是指只能被1和它本身整除的数，1不是质数；如何判断一个数是否为质数呢。首先我想到的是用循环，让它从2开始，直到本身，循环过程中，如果遇到余数为0，就跳出循环。很显然这样的方式很不可取，当这个数是一个比较大的质数时，就会慢慢的循环到本身，对计算机的能力是一个挑战，数字足够大的时候（不用多大）就会奔溃。所以此处如何优化算法，成为关键。">
+<meta property="og:updated_time" content="2017-04-30T02:35:03.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大菠萝">
+<meta name="twitter:title" content="判断质是否为质数">
+<meta name="twitter:description" content="质数（素数）是指只能被1和它本身整除的数，1不是质数；如何判断一个数是否为质数呢。首先我想到的是用循环，让它从2开始，直到本身，循环过程中，如果遇到余数为0，就跳出循环。很显然这样的方式很不可取，当这个数是一个比较大的质数时，就会慢慢的循环到本身，对计算机的能力是一个挑战，数字足够大的时候（不用多大）就会奔溃。所以此处如何优化算法，成为关键。">
   
     <link rel="alternative" href="/atom.xml" title="大菠萝" type="application/atom+xml">
   
@@ -131,60 +135,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-判断质是否为质数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/12/outGFW/" class="archive-article-date">
-  	<time datetime="2017-04-12T01:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/12/outGFW/">翻墙的捷径</a>
+    <h1 class="article-title" itemprop="name">
+      判断质是否为质数
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/30/判断质是否为质数/" class="archive-article-date">
+  	<time datetime="2017-04-30T02:12:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>质数（素数）是指只能被1和它本身整除的数，1不是质数；<br>如何判断一个数是否为质数呢。<br>首先我想到的是用循环，让它从2开始，直到本身，循环过程中，如果遇到余数为0，就跳出循环。很显然这样的方式很不可取，当这个数是一个比较大的质数时，就会慢慢的循环到本身，对计算机的能力是一个挑战，数字足够大的时候（不用多大）就会奔溃。<br>所以此处如何优化算法，成为关键。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function isPrime(number) &#123;</div><div class="line">   if (typeof number !== &apos;number&apos; || number&lt;2) &#123;</div><div class="line">      // 不是数字或者数字小于2</div><div class="line">      return false;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   if (number === 2) &#123;//2是质数</div><div class="line">      return true;</div><div class="line">   &#125; else if (number % 2 === 0) &#123;//排除偶数</div><div class="line">      return false;</div><div class="line">   &#125;</div><div class="line">   var square = Math.sqrt(number);</div><div class="line"></div><div class="line">　　//因为2已经验证过，所以从3开始；且已经排除偶数，所以每次加2</div><div class="line">   for(var i = 3; i &lt;= square; i += 2) &#123;</div><div class="line">      if (number % i === 0) &#123;</div><div class="line">         return false;</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">   return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里将过程中多余的，可以直接将一定不为质数的数挑选出来，不进行考虑，其中把非数字和小于2的数去除，然后将偶数排除，最后得到的数都是不能被二整出的，将循环范围设置在3到检测数的平方根（以平方根左右是对称的，所以后面的数相当于前面对应的数，不需要再重复计算），每次加2（跳过偶数）。<br>这种方法较未优化的方法高效，这种通过逆向的算法很有效率。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gfw</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">纠错本</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/30/判断质是否为质数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/04/27/最近碰到的一个个问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最近碰到的一个关于jsonp问题（待解决)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -207,9 +311,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
